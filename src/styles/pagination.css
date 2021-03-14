@@ -1,0 +1,25 @@
+.pagination {
+  display: flex;
+  padding: 1rem;
+}
+
+.pagination-button {
+  cursor: pointer;
+  background-color: rgb(235, 235, 235);
+  border-radius: 50px;
+  border: none;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  transition: all 0.4s cubic-bezier(0.2, 0.5, 0.3, 1);
+}
+
+.pagination-button:hover {
+  background-color: rgb(173, 216, 209);
+}
+
+.pagination-button:focus {
+  outline: none;
+}
+
+.next {
+  margin-left: auto;
+}

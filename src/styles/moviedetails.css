@@ -1,0 +1,92 @@
+.content-movie-details {
+  width: 70%;
+  margin: auto;
+}
+
+.movie-details {
+  display: flex;
+  padding-top: 7rem;
+}
+
+.poster-details-img {
+  border-radius: 10px;
+  width: 500px;
+  /* width: 450px; */
+}
+
+.poster-details-missing {
+  border-radius: 10px;
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10rem;
+}
+
+.details {
+  padding: 0 2rem;
+  width: 60%;
+}
+
+.details-h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-family: "Rubik", sans-serif;
+  font-weight: 500;
+}
+
+.details-h3 {
+  font-style: italic;
+}
+
+.details-p {
+  padding-top: 0.5rem;
+}
+
+.synopsis-h2 {
+  padding-top: 1.5rem;
+}
+
+.synopsis-p {
+  padding-top: 0.5rem;
+  text-align: justify;
+}
+
+.trailer {
+  padding-top: 2rem;
+}
+
+.trailer-button {
+  background-color: rgb(235, 235, 235);
+  cursor: pointer;
+  border-radius: 50px;
+  border: none;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  transition: all 0.4s cubic-bezier(0.2, 0.5, 0.3, 1);
+}
+
+.trailer-button:hover {
+  background-color: rgb(173, 216, 209);
+}
+
+.trailer-button:focus {
+  outline: none;
+}
+
+/* STYLING RECOMMENDED SECTION */
+
+.recommendations {
+  padding-top: 7rem;
+}
+
+.recommendations-h1 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  padding: 0rem 0rem 2rem 7rem;
+  font-weight: 300;
+}
+
+.recommendations-null {
+  padding: 0 0 3rem 7rem;
+  font-size: 1.1rem;
+}

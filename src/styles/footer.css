@@ -1,0 +1,20 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: rgb(235, 235, 235);
+  padding: 1rem 3rem;
+}
+
+.repository-link {
+  transition: all 0.4s cubic-bezier(0.2, 0.5, 0.3, 1);
+}
+
+.repository-link:hover {
+  fill: rgb(173, 216, 209);
+}
+
+.tmdb-logo {
+  width: 100px;
+}
