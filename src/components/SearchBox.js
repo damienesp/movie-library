@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useHistory } from "react-router";
 
-const SearchBox = () => {
+const SearchBox = ({ routeChange }) => {
   const [query, setQuery] = useState("");
   const history = useHistory();
 
@@ -15,6 +15,7 @@ const SearchBox = () => {
     e.preventDefault();
     history.push(`/search/${query}`);
     document.querySelector(".search").value = "";
+    routeChange();
   };
 
   return (

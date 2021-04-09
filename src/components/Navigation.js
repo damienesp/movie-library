@@ -1,26 +1,33 @@
 import { NavLink } from "react-router-dom";
 
-import popcorn from "../img/popcorn.svg";
-
-const Navigation = () => {
+const Navigation = ({ routeChange }) => {
   return (
     <nav>
-      <button className="hamburger">
-        <img src={popcorn} />
-      </button>
       <ul className="nav-links">
         <li>
-          <NavLink to="/popular" activeClassName="nav-active">
+          <NavLink
+            to="/popular"
+            activeClassName="nav-active"
+            onClick={routeChange}
+          >
             Popular
           </NavLink>
         </li>
         <li>
-          <NavLink to="/top-rated" activeClassName="nav-active">
+          <NavLink
+            to="/top-rated"
+            activeClassName="nav-active"
+            onClick={routeChange}
+          >
             Top Rated
           </NavLink>
         </li>
         <li>
-          <NavLink to="/upcoming" activeClassName="nav-active">
+          <NavLink
+            to="/upcoming"
+            activeClassName="nav-active"
+            onClick={routeChange}
+          >
             Upcoming
           </NavLink>
         </li>
