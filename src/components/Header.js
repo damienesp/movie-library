@@ -12,7 +12,7 @@ const Header = () => {
   useEffect(() => {
     transparentNav();
     hideOverflow();
-  }, []);
+  });
 
   // Make navbar black when scrolling
   const transparentNav = () => {
@@ -58,10 +58,7 @@ const Header = () => {
       >
         <img src={popcorn} />
       </button>
-      <div
-        className={`nav-wrapper ${mobileMenu ? "active" : null}`}
-        style={handleTransparent ? { backgroundColor: "rgb(0, 0, 0)" } : null}
-      >
+      <div className={`nav-wrapper ${mobileMenu ? "active" : null}`}>
         <Navigation routeChange={handleRouteChange} />
         <SearchBox routeChange={handleRouteChange} />
       </div>
