@@ -23,19 +23,37 @@ const Banner = () => {
 
   return (
     <>
-      {backdrop != undefined ? (
+      {
         <div
           className="backdrop"
           style={{
             backgroundImage: `linear-gradient(0deg,
-        rgba(255,255,255,1) 0%, rgba(255,255,255,0) 80%), url(${
-          poster + "/" + backdrop
-        })`,
+        rgba(255,255,255,1) 0%, rgba(255,255,255,0) 80%), ${
+          backdrop != undefined
+            ? `url(${poster + "/" + backdrop})`
+            : `backgroundColor: "lightpink"`
+        }`,
           }}
         ></div>
-      ) : null}
+      }
     </>
   );
 };
 
 export default Banner;
+
+{
+  /* <>
+{backdrop != undefined ? (
+  <div
+    className="backdrop"
+    style={{
+      backgroundImage: `linear-gradient(0deg,
+  rgba(255,255,255,1) 0%, rgba(255,255,255,0) 80%), url(${
+    poster + "/" + backdrop
+  })`,
+    }}
+  ></div>
+) : null}
+</> */
+}
