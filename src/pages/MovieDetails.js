@@ -6,6 +6,7 @@ import { key, posterWidth500 } from "../config";
 
 const MovieDetails = (props) => {
   const [movie, setMovie] = useState([]);
+  const [trailer, setTrailer] = useState("");
 
   // Get ID of the movie from match router
   const movieId = props.match.params.id;
@@ -17,6 +18,17 @@ const MovieDetails = (props) => {
     );
     const data = await response.json();
     setMovie(data);
+  };
+
+  // Get trailer link from API
+  const getTrailer = async () => {
+    const response = await fetch(
+      `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${key}&language=en-US`
+    );
+    const data = await response.json();
+    if (data.results.length !== 0) {
+      setTrailer(data.results[0].key);
+    }
   };
 
   // Transform min runtime to 00h00min format
@@ -37,6 +49,7 @@ const MovieDetails = (props) => {
 
   useEffect(() => {
     getMovie();
+    getTrailer();
     handleOnClick();
   }, [movieId]);
 
@@ -66,11 +79,17 @@ const MovieDetails = (props) => {
               <h2 className="synopsis-h2">SYNOPSIS</h2>
               <p className="synopsis-p">{movie.overview}</p>
             </div>
-            <div className="trailer">
-              <a href="">
-                <button className="trailer-button">Watch Trailer</button>
-              </a>
-            </div>
+            {trailer ? (
+              <div className="trailer">
+                <a
+                  href={`https://www.youtube.com/watch?v=${trailer}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <button className="trailer-button">Watch Trailer</button>
+                </a>
+              </div>
+            ) : null}
           </div>
         </div>
       </div>
