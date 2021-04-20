@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import queryString from "query-string";
 
+import Loading from "../components/Loading";
 import MovieList from "../components/MovieList";
 import Pagination from "../components/Pagination";
 
@@ -9,6 +10,7 @@ import { key } from "../config";
 
 const Popular = () => {
   const [movies, setMovies] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const location = useLocation();
   const page = queryString.parse(location.search).page || 1;
@@ -20,6 +22,7 @@ const Popular = () => {
     );
     const data = await response.json();
     setMovies(data);
+    setLoading(false);
   };
 
   // Smooth scroll to top of component after page change
@@ -32,6 +35,14 @@ const Popular = () => {
     getMovies();
     handleOnClick();
   }, [page, location]);
+
+  if (loading) {
+    return (
+      <div className="main-content" ref={refTop}>
+        <Loading />
+      </div>
+    );
+  }
 
   return (
     <div className="main-content" ref={refTop}>
