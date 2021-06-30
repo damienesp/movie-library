@@ -14,7 +14,7 @@ const Header = () => {
     hideOverflow();
   });
 
-  // Make navbar black when scrolling
+  // Make navbar black when scrolling test
   const transparentNav = () => {
     window.addEventListener("scroll", () => {
       if (window.scrollY > 130) {
