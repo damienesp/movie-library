@@ -7,7 +7,7 @@ import { key } from "../config";
 const Recommendations = ({ props, movie }) => {
   const [recommendations, setRecommendations] = useState([]);
 
-  // Get ID of the movie from match router
+  // Get ID of the movie from match router test 3
   const movieId = props.match.params.id;
 
   useEffect(() => {
