@@ -8,7 +8,7 @@ const MovieDetails = (props) => {
   const [movie, setMovie] = useState([]);
   const [trailer, setTrailer] = useState("");
 
-  // Get ID of the movie from match router
+  // Get ID of the movie from router match
   const movieId = props.match.params.id;
 
   // Get movie details from API
